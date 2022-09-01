@@ -97,12 +97,12 @@ func (t *Tag) Export() (string, error) {
 	}
 
 	xlsFile := xlsx.NewFile()
-	sheet, err := xlsFile.AddSheet("标签信息")
+	sheet, err := xlsFile.AddSheet("Sheet 1")
 	if err != nil {
 		return "", err
 	}
 
-	titles := []string{"ID", "名称", "创建人", "创建时间", "修改人", "修改时间"}
+	titles := []string{"ID", "Name", "Created by", "Created by", "Modified by", "Modified by"}
 	row := sheet.AddRow()
 
 	var cell *xlsx.Cell
