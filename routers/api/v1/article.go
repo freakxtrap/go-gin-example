@@ -3,10 +3,10 @@ package v1
 import (
 	"net/http"
 
-	"github.com/unknwon/com"
 	"github.com/astaxie/beego/validation"
 	"github.com/boombuler/barcode/qr"
 	"github.com/gin-gonic/gin"
+	"github.com/unknwon/com"
 
 	"github.com/EDDYCJY/go-gin-example/pkg/app"
 	"github.com/EDDYCJY/go-gin-example/pkg/e"
@@ -20,8 +20,8 @@ import (
 // @Summary Get a single article
 // @Produce json
 // @Param   id  path     int true "ID"
-// @Success 200        {object} app.Response
-// @Failure 500        {object} app.Response
+// @Success 200         {object} app.Response
+// @Failure 500         {object} app.Response
 // @Router  /api/v1/articles/{id} [get]
 func GetArticle(c *gin.Context) {
 	appG := app.Gin{C: c}
@@ -123,14 +123,15 @@ type AddArticleForm struct {
 
 // @Summary Add article
 // @Produce json
-// @Param   tag_id     body     int    true "TagID"
-// @Param   title      body     string true "Title"
-// @Param   desc       body     string true "Desc"
-// @Param   content    body     string true "Content"
-// @Param   created_by body     string true "CreatedBy"
-// @Param   state      body     int    true "State"
-// @Success 200         {object} app.Response
-// @Failure 500         {object} app.Response
+// @Param   tag_id          body     int    true "TagID"
+// @Param   title           body     string true "Title"
+// @Param   desc            body     string true "Desc"
+// @Param   content         body     string true "Content"
+// @Param   created_by      body     string true "CreatedBy"
+// @Param   cover_image_url body     string true "CoverImageUrl"
+// @Param   state           body     int    true "State"
+// @Success 200             {object} app.Response
+// @Failure 500             {object} app.Response
 // @Router  /api/v1/articles [post]
 func AddArticle(c *gin.Context) {
 	var (

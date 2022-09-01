@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 
 	_ "github.com/EDDYCJY/go-gin-example/docs"
-	"github.com/swaggo/gin-swagger"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
 	"github.com/EDDYCJY/go-gin-example/middleware/jwt"
@@ -14,7 +14,7 @@ import (
 	"github.com/EDDYCJY/go-gin-example/pkg/qrcode"
 	"github.com/EDDYCJY/go-gin-example/pkg/upload"
 	"github.com/EDDYCJY/go-gin-example/routers/api"
-	"github.com/EDDYCJY/go-gin-example/routers/api/v1"
+	v1 "github.com/EDDYCJY/go-gin-example/routers/api/v1"
 )
 
 // InitRouter initialize routing information
@@ -43,9 +43,9 @@ func InitRouter() *gin.Engine {
 		// delete tag
 		apiv1.DELETE("/tags/:id", v1.DeleteTag)
 		// export tag
-		r.POST("/tags/export", v1.ExportTag)
+		apiv1.POST("/tags/export", v1.ExportTag)
 		// import tag
-		r.POST("/tags/import", v1.ImportTag)
+		apiv1.POST("/tags/import", v1.ImportTag)
 
 		// get list of articles
 		apiv1.GET("/articles", v1.GetArticles)

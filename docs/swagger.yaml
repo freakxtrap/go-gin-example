@@ -79,6 +79,12 @@ paths:
         required: true
         schema:
           type: string
+      - description: CoverImageUrl
+        in: body
+        name: cover_image_url
+        required: true
+        schema:
+          type: string
       - description: State
         in: body
         name: state

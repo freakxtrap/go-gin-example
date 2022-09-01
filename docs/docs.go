@@ -120,6 +120,15 @@ const docTemplate = `{
                         }
                     },
                     {
+                        "description": "CoverImageUrl",
+                        "name": "cover_image_url",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
                         "description": "State",
                         "name": "state",
                         "in": "body",
