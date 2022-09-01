@@ -34,30 +34,30 @@ func InitRouter() *gin.Engine {
 	apiv1 := r.Group("/api/v1")
 	apiv1.Use(jwt.JWT())
 	{
-		//获取标签列表
+		// get list of tags
 		apiv1.GET("/tags", v1.GetTags)
-		//新建标签
+		// new tag
 		apiv1.POST("/tags", v1.AddTag)
-		//更新指定标签
+		// edit tag
 		apiv1.PUT("/tags/:id", v1.EditTag)
-		//删除指定标签
+		// delete tag
 		apiv1.DELETE("/tags/:id", v1.DeleteTag)
-		//导出标签
+		// export tag
 		r.POST("/tags/export", v1.ExportTag)
-		//导入标签
+		// import tag
 		r.POST("/tags/import", v1.ImportTag)
 
-		//获取文章列表
+		// get list of articles
 		apiv1.GET("/articles", v1.GetArticles)
-		//获取指定文章
+		// get article by id
 		apiv1.GET("/articles/:id", v1.GetArticle)
-		//新建文章
+		// add article
 		apiv1.POST("/articles", v1.AddArticle)
-		//更新指定文章
+		// edit article
 		apiv1.PUT("/articles/:id", v1.EditArticle)
-		//删除指定文章
+		//delete article
 		apiv1.DELETE("/articles/:id", v1.DeleteArticle)
-		//生成文章海报
+		// generate article poster
 		apiv1.POST("/articles/poster/generate", v1.GenerateArticlePoster)
 	}
 
