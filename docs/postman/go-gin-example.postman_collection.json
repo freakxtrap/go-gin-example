@@ -1,0 +1,780 @@
+{
+	"info": {
+		"_postman_id": "9aa002ee-cf4f-4c3b-b256-de4387c57224",
+		"name": "go-gin-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7974881"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Get Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/articles?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/articles?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:08:35 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "504"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": {\n        \"lists\": [\n            {\n                \"id\": 5,\n                \"created_on\": 1662012041,\n                \"modified_on\": 1662012041,\n                \"deleted_on\": 0,\n                \"tag_id\": 1,\n                \"tag\": {\n                    \"id\": 1,\n                    \"created_on\": 1662011968,\n                    \"modified_on\": 1662011968,\n                    \"deleted_on\": 0,\n                    \"name\": \"Tech\",\n                    \"created_by\": \"John Doe\",\n                    \"modified_by\": \"\",\n                    \"state\": 1\n                },\n                \"title\": \"How to learn go?\",\n                \"desc\": \"Go is quite different, but it's very fast. We should try it!\",\n                \"content\": \"This is example of content.\",\n                \"cover_image_url\": \"http://test.com\",\n                \"created_by\": \"John Doe\",\n                \"modified_by\": \"\",\n                \"state\": 1\n            }\n        ],\n        \"total\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Article ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/articles/1?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles",
+								"1"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Article ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/articles/1?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles",
+										"1"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:02:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "482"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": {\n        \"id\": 1,\n        \"created_on\": 1662012041,\n        \"modified_on\": 1662012041,\n        \"deleted_on\": 0,\n        \"tag_id\": 1,\n        \"tag\": {\n            \"id\": 1,\n            \"created_on\": 1662011968,\n            \"modified_on\": 1662011968,\n            \"deleted_on\": 0,\n            \"name\": \"Tech\",\n            \"created_by\": \"John Doe\",\n            \"modified_by\": \"\",\n            \"state\": 1\n        },\n        \"title\": \"How to learn go?\",\n        \"desc\": \"Go is quite different, but it's very fast. We should try it!\",\n        \"content\": \"This is example of content.\",\n        \"cover_image_url\": \"http://test.com\",\n        \"created_by\": \"John Doe\",\n        \"modified_by\": \"\",\n        \"state\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Article",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tag_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "How to learn go?",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "Go is quite different, but it's very fast. We should try it!",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "This is example of content.",
+									"type": "text"
+								},
+								{
+									"key": "created_by",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "cover_image_url",
+									"value": "http://test.com",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/articles?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"articles"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Article",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "tag_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "How to learn go?",
+											"type": "text"
+										},
+										{
+											"key": "desc",
+											"value": "Go is quite different, but it's very fast. We should try it!",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "This is example of content.",
+											"type": "text"
+										},
+										{
+											"key": "created_by",
+											"value": "John Doe",
+											"type": "text"
+										},
+										{
+											"key": "cover_image_url",
+											"value": "http://test.com",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/articles?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"articles"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:04:25 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Add Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tech",
+									"type": "text"
+								},
+								{
+									"key": "created_by",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "1",
+									"description": "boolean",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tags?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Tag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tech",
+											"type": "text"
+										},
+										{
+											"key": "created_by",
+											"value": "John Doe",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"description": "boolean",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/tags?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 05:59:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Export Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tags/export?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tags",
+								"export"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Export Tag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/tags/export?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tags",
+										"export"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:14:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": {\n        \"export_save_url\": \"export/tags-1662012874.xlsx\",\n        \"export_url\": \"http://127.0.0.1:8000/export/tags-1662012874.xlsx\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Import Tag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/aldian/Downloads/tags-1662012874.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/tags/import?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tags",
+								"import"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Import Tag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/aldian/Downloads/tags-1662012874.xlsx"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/tags/import?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tags",
+										"import"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:16:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/tags?token={{token}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Tag",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ok",
+											"type": "text"
+										},
+										{
+											"key": "created_by",
+											"value": "me",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/tags?token={{token}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"tags"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "{{token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Sep 2022 06:00:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "190"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"msg\": \"ok\",\n    \"data\": {\n        \"lists\": [\n            {\n                \"id\": 1,\n                \"created_on\": 1662011968,\n                \"modified_on\": 1662011968,\n                \"deleted_on\": 0,\n                \"name\": \"Tech\",\n                \"created_by\": \"John Doe\",\n                \"modified_by\": \"\",\n                \"state\": 1\n            }\n        ],\n        \"total\": 1\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjA5OGY2YmNkNDYyMWQzNzNjYWRlNGU4MzI2MjdiNGY2IiwicGFzc3dvcmQiOiJjYzAzZTc0N2E2YWZiYmNiZjhiZTc2NjhhY2ZlYmVlNSIsImV4cCI6MTY2MjAxNzM2NCwiaXNzIjoiZ2luLWJsb2cifQ.7PwmTZQ5HR9Y8ZCWDliEYsi5F3FGmVpWy-leAQXWgQQ",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
