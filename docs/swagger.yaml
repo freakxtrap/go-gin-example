@@ -3,8 +3,7 @@ definitions:
     properties:
       code:
         type: integer
-      data:
-        type: object
+      data: {}
       msg:
         type: string
     type: object
@@ -323,12 +322,6 @@ paths:
       summary: Export article tag
   /api/v1/tags/import:
     post:
-      parameters:
-      - description: Image File
-        in: formData
-        name: image
-        required: true
-        type: file
       produces:
       - application/json
       responses:
@@ -340,11 +333,11 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/app.Response'
-      summary: Import Image
+      summary: Import article tag
   /auth:
-    get:
+    post:
       parameters:
-      - description: userName
+      - description: username
         in: query
         name: username
         required: true
@@ -365,5 +358,5 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/app.Response'
-      summary: Get Auth
+      summary: Get auth token
 swagger: "2.0"

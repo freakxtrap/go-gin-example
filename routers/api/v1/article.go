@@ -18,11 +18,11 @@ import (
 )
 
 // @Summary Get a single article
-// @Produce  json
-// @Param id path int true "ID"
-// @Success 200 {object} app.Response
-// @Failure 500 {object} app.Response
-// @Router /api/v1/articles/{id} [get]
+// @Produce json
+// @Param   id  path     int true "ID"
+// @Success 200        {object} app.Response
+// @Failure 500        {object} app.Response
+// @Router  /api/v1/articles/{id} [get]
 func GetArticle(c *gin.Context) {
 	appG := app.Gin{C: c}
 	id := com.StrTo(c.Param("id")).MustInt()
@@ -56,13 +56,13 @@ func GetArticle(c *gin.Context) {
 }
 
 // @Summary Get multiple articles
-// @Produce  json
-// @Param tag_id body int false "TagID"
-// @Param state body int false "State"
-// @Param created_by body int false "CreatedBy"
-// @Success 200 {object} app.Response
-// @Failure 500 {object} app.Response
-// @Router /api/v1/articles [get]
+// @Produce json
+// @Param   tag_id     body     int false "TagID"
+// @Param   state      body     int false "State"
+// @Param   created_by body     int false "CreatedBy"
+// @Success 200        {object} app.Response
+// @Failure 500        {object} app.Response
+// @Router  /api/v1/articles [get]
 func GetArticles(c *gin.Context) {
 	appG := app.Gin{C: c}
 	valid := validation.Validation{}
@@ -122,16 +122,16 @@ type AddArticleForm struct {
 }
 
 // @Summary Add article
-// @Produce  json
-// @Param tag_id body int true "TagID"
-// @Param title body string true "Title"
-// @Param desc body string true "Desc"
-// @Param content body string true "Content"
-// @Param created_by body string true "CreatedBy"
-// @Param state body int true "State"
-// @Success 200 {object} app.Response
-// @Failure 500 {object} app.Response
-// @Router /api/v1/articles [post]
+// @Produce json
+// @Param   tag_id     body     int    true "TagID"
+// @Param   title      body     string true "Title"
+// @Param   desc       body     string true "Desc"
+// @Param   content    body     string true "Content"
+// @Param   created_by body     string true "CreatedBy"
+// @Param   state      body     int    true "State"
+// @Success 200         {object} app.Response
+// @Failure 500         {object} app.Response
+// @Router  /api/v1/articles [post]
 func AddArticle(c *gin.Context) {
 	var (
 		appG = app.Gin{C: c}
@@ -185,17 +185,17 @@ type EditArticleForm struct {
 }
 
 // @Summary Update article
-// @Produce  json
-// @Param id path int true "ID"
-// @Param tag_id body string false "TagID"
-// @Param title body string false "Title"
-// @Param desc body string false "Desc"
-// @Param content body string false "Content"
-// @Param modified_by body string true "ModifiedBy"
-// @Param state body int false "State"
+// @Produce json
+// @Param   id          path     int    true  "ID"
+// @Param   tag_id      body     string false "TagID"
+// @Param   title       body     string false "Title"
+// @Param   desc        body     string false "Desc"
+// @Param   content     body     string false "Content"
+// @Param   modified_by body     string true  "ModifiedBy"
+// @Param   state       body     int    false "State"
 // @Success 200 {object} app.Response
 // @Failure 500 {object} app.Response
-// @Router /api/v1/articles/{id} [put]
+// @Router  /api/v1/articles/{id} [put]
 func EditArticle(c *gin.Context) {
 	var (
 		appG = app.Gin{C: c}
@@ -250,11 +250,11 @@ func EditArticle(c *gin.Context) {
 }
 
 // @Summary Delete article
-// @Produce  json
-// @Param id path int true "ID"
+// @Produce json
+// @Param   id  path     int true "ID"
 // @Success 200 {object} app.Response
 // @Failure 500 {object} app.Response
-// @Router /api/v1/articles/{id} [delete]
+// @Router  /api/v1/articles/{id} [delete]
 func DeleteArticle(c *gin.Context) {
 	appG := app.Gin{C: c}
 	valid := validation.Validation{}

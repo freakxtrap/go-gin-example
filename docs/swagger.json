@@ -402,16 +402,7 @@
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Import Image",
-                "parameters": [
-                    {
-                        "type": "file",
-                        "description": "Image File",
-                        "name": "image",
-                        "in": "formData",
-                        "required": true
-                    }
-                ],
+                "summary": "Import article tag",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -515,15 +506,15 @@
             }
         },
         "/auth": {
-            "get": {
+            "post": {
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Get Auth",
+                "summary": "Get auth token",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "userName",
+                        "description": "username",
                         "name": "username",
                         "in": "query",
                         "required": true
@@ -560,9 +551,7 @@
                 "code": {
                     "type": "integer"
                 },
-                "data": {
-                    "type": "object"
-                },
+                "data": {},
                 "msg": {
                     "type": "string"
                 }
